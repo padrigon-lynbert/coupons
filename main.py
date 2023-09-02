@@ -3,9 +3,6 @@ def cls(): os.system('cls')
 
 products = {"Cappucino": 100, "Choco": 60, "Black Forest": 70}
 
-order = [70, 60, 60, 100, 100]
-price = sum(order)
-
 def get_order():
     order = list()
     while True:
@@ -33,12 +30,11 @@ def get_order():
         if i.isdigit() and i in range(0,3): break
         else: continue
     
-    
+    return order
         
-        
-# def get_voucher():
-#     voucher = input("Voucher: ")
-#     return voucher
+def get_voucher():
+    voucher = input("Voucher: ")
+    return voucher
 
 def run():
     get_order()
