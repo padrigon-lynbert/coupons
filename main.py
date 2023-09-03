@@ -1,3 +1,4 @@
+from Percentage.main import Percentage
 import os
 def cls(): os.system('cls')
 
@@ -35,16 +36,21 @@ def get_order():
             
         break
 
-price = lambda order_lst: sum(order_lst)
+def get_price(): #example only (edit this next)
+    price = [50,50,50,50,50]
+    return(sum(price))
            
-def get_voucher():
-    voucher = input("Voucher: ")
-    return voucher
-voucher = lambda: input("voucher  ")
+voucher = lambda: input("voucher: ")
+
+def discounted_price(voucher, price):
+    global discount
+    
+    discount = Percentage.value_of_percentage(voucher, price)
+    
+    return get_price() - discount
 
 def run():
-    get_order()
-    get_voucher()
+    
     
 run()
 
