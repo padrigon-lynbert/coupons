@@ -34,16 +34,17 @@ def get_order():
             else: print("Enter correct values."); continue
             
         break
-    
-    
-        
-        
-# def get_voucher():
-#     voucher = input("Voucher: ")
-#     return voucher
+
+price = lambda order_lst: sum(order_lst)
+           
+def get_voucher():
+    voucher = input("Voucher: ")
+    return voucher
+voucher = lambda: input("voucher  ")
 
 def run():
     get_order()
+    get_voucher()
     
 run()
 
