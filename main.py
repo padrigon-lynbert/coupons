@@ -51,6 +51,6 @@ def discounted_price(voucher, price):
 
 def run(): pass
     
-    
+
 run()
 
