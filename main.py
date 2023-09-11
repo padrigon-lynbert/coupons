@@ -49,8 +49,14 @@ def discounted_price(voucher, price):
     
     return get_price() - discount
 
+def run():
+    
+    discount = Percentage.value_of_percentage(voucher, price)
+    
+    return get_price() - discount
+
 def run(): pass
     
-    
+
 run()
 
