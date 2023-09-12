@@ -4,10 +4,6 @@ def cls(): os.system('cls')
 
 products = {"Cappucino": 100, "Choco": 60, "Black Forest": 70}
 
-order = [70, 60, 60, 100, 100]
-price = sum(order)
-
-# print(products["Cappucino"])
 def get_order():
     order = list()
     while True:
@@ -35,28 +31,31 @@ def get_order():
             else: print("Enter correct values."); continue
             
         break
+    return order
 
-def get_price(): #example only (edit this next)
-    price = [50,50,50,50,50]
-    return(sum(price))
+def get_price(order):
+    individual_price = list()
+    
+    for element in order:
+        if element == 0: individual_price.append(100)
+        elif element == 1: individual_price.append(60)
+        else: individual_price.append(70)
+        
+        price = sum(individual_price)
+
+    return price
            
-voucher = lambda: input("voucher: ")
+voucher = lambda: int(input("voucher: "))
 
-def discounted_price(voucher, price):
-    global discount
+def discount(voucher, price):
+    discount_is = Percentage.value_of_percentage(voucher, price)
     
-    discount = Percentage.value_of_percentage(voucher, price)
-    
-    return get_price() - discount
+    return discount_is
 
-def run():
-    
-    discount = Percentage.value_of_percentage(voucher, price)
-    
-    return get_price() - discount
+def run(): 
+    price = get_price(get_order())
 
-def run(): pass
-    
-
+    cls()
+    print(f"Order's price: {price - (discount(voucher(),price))}")
 run()
 
