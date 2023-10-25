@@ -19,7 +19,7 @@ def get_order():
                 choice = int(input("<0> Enter order \n<1> Delete last index \n<2> Move on\n\n: "))
             except ValueError: print("Enter correct values.")
 
-            if choice == 0: order = input("\nOrder: ").split()
+            if choice == 0: order = input("\nOrder (separate using spaces): ").split()
             elif choice == 1: 
                 try: order.pop()
                 except IndexError: print("No value to delete."); continue
