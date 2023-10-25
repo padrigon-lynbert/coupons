@@ -1,4 +1,4 @@
-from Percentage.main import Percentage
+from Percentage.Percentage import Percentage
 import os
 def cls(): os.system('cls')
 
@@ -37,8 +37,8 @@ def get_price(order):
     individual_price = list()
     
     for element in order:
-        if element == 0: individual_price.append(100)
-        elif element == 1: individual_price.append(60)
+        if element == '0': individual_price.append(100)
+        elif element == '1': individual_price.append(60)
         else: individual_price.append(70)
         
         price = sum(individual_price)
